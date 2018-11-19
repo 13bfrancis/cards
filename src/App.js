@@ -45,11 +45,21 @@ const App = () => {
   };
 
   return (
-    <div>
-      {cards.map(val => (
-        <p key={val.id}>{val.name}</p>
-      ))}
-      <h1>{card}</h1>
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'center'
+      }}
+    >
+      <ul style={{ flexBasis: '40%' }}>
+        {cards.map(val => (
+          <li key={val.id}>{val.name}</li>
+        ))}
+      </ul>
+      <h1 style={{ flexBasis: '40%', flexGrow: '1' }}>{card}</h1>
       <button
         style={{ position: 'absolute', top: 0, right: 0 }}
         onClick={drawCard}
